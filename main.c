@@ -1,19 +1,26 @@
 #include <stdio.h>
 
 int main() {
-    int distance1 = 120; // км
-    int time1 = 2;      // години
-    int distance2 = 80;  // км
-    int time2 = 1;      // година
+    int number, reversed = 0;
     
-    int totalDistance = distance1 + distance2;
-    int totalTime = time1 + time2;
-    float averageSpeed = (float)totalDistance / totalTime;
+    printf("Завдання 5: Виведення тризначного числа у зворотному порядку\n");
+    printf("Введіть тризначне число: ");
+    scanf("%d", &number);
     
-    printf("Завдання 4: Обчислення середньої швидкості\n");
-    printf("Пройдена відстань: %d км\n", totalDistance);
-    printf("Витрачений час: %d годин\n", totalTime);
-    printf("Середня швидкість: %.2f км/год\n", averageSpeed);
+    // Перевірка, що число тризначне
+    if (number < 100 || number > 999) {
+        printf("Помилка: введіть тризначне число (від 100 до 999).\n");
+        return 1;
+    }
+    
+    // отримуємо цифри і формуємо нове число
+    int digit1 = number % 10;          // одиниці
+    int digit2 = (number / 10) % 10;   // десятки
+    int digit3 = number / 100;         // сотні
+    
+    reversed = digit1 * 100 + digit2 * 10 + digit3;
+    
+    printf("Число %d у зворотному порядку: %d\n", number, reversed);
     
     return 0;
 }
