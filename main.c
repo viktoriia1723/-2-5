@@ -1,15 +1,22 @@
 #include <stdio.h>
 
 int main() {
-    int number, lastDigit;
+    int a, b;
     
-    printf("Завдання 3: Виведення останньої цифри числа\n");
-    printf("Введіть ціле число: ");
-    scanf("%d", &number);
+    printf("Завдання 1: Поміняти місцями два числа без третьої змінної\n");
+    printf("Введіть перше число: ");
+    scanf("%d", &a);
+    printf("Введіть друге число: ");
+    scanf("%d", &b);
     
-    lastDigit = number % 10;
+    printf("До обміну: a = %d, b = %d\n", a, b);
     
-    printf("Остання цифра числа %d: %d\n", number, lastDigit);
+    // Обмін значень без використання третьої змінної
+    a = a + b;
+    b = a - b;
+    a = a - b;
+    
+    printf("Після обміну: a = %d, b = %d\n", a, b);
     
     return 0;
 }
