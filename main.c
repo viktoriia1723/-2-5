@@ -1,17 +1,16 @@
 #include <stdio.h>
+#include <math.h>
 
 int main() {
-    int totalSeconds;
+    float radius;
+    const float PI = 3.14159;
     
-    printf("Введіть кількість секунд: ");
-    scanf("%d", &totalSeconds);
+    printf("Введіть радіус кола: ");
+    scanf("%f", &radius);
     
-    int hours = totalSeconds / 3600;
-    int minutes = (totalSeconds % 3600) / 60;
-    int seconds = totalSeconds % 60;
+    float area = PI * radius * radius;
     
-    printf("%d секунд = %d годин, %d хвилин, %d секунд\n",
-           totalSeconds, hours, minutes, seconds);
+    printf("Площа кола з радіусом %.2f = %.2f\n", radius, area);
     
     return 0;
 }
