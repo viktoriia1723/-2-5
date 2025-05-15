@@ -1,26 +1,18 @@
 #include <stdio.h>
 
 int main() {
-    int number, reversed = 0;
+    int totalSeconds;
     
-    printf("Завдання 5: Виведення тризначного числа у зворотному порядку\n");
-    printf("Введіть тризначне число: ");
-    scanf("%d", &number);
+    printf("Введіть кількість секунд: ");
+    scanf("%d", &totalSeconds);
     
-    // Перевірка, що число тризначне
-    if (number < 100 || number > 999) {
-        printf("Помилка: введіть тризначне число (від 100 до 999).\n");
-        return 1;
-    }
+    int hours = totalSeconds / 3600;
+    int minutes = (totalSeconds % 3600) / 60;
+    int seconds = totalSeconds % 60;
     
-    // отримуємо цифри і формуємо нове число
-    int digit1 = number % 10;          // одиниці
-    int digit2 = (number / 10) % 10;   // десятки
-    int digit3 = number / 100;         // сотні
-    
-    reversed = digit1 * 100 + digit2 * 10 + digit3;
-    
-    printf("Число %d у зворотному порядку: %d\n", number, reversed);
+    printf("%d секунд = %d годин, %d хвилин, %d секунд\n",
+           totalSeconds, hours, minutes, seconds);
     
     return 0;
 }
+
